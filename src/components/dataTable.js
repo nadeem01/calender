@@ -32,7 +32,6 @@ export default function EmloyeeTable(props) {
              return <AppointmentCard appointment={appointment}/>
              })}
              </td>
-          <td></td>
           <td>2</td>
           <td>2</td>
           <td>2</td>

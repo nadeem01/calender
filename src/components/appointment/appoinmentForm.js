@@ -10,7 +10,6 @@ import { addAppointment } from './actions';
 ;
 function AppoinmnetForm({ handleClose }) {
 
-    const [startDate, setStartDate] = React.useState(new Date());
     const dispatch = useDispatch()
     const [id, setId] = React.useState({
         employeeId: "",
@@ -25,7 +24,6 @@ function AppoinmnetForm({ handleClose }) {
         durationId: id.durationId,
 
     })
-    const [values, setValues] = React.useState();
     const handleChangeAppointment = (e) => {
         const { name, value, id, selectedIndex } = e.target;
         console.log(name, 'asdas')
@@ -61,10 +59,6 @@ function AppoinmnetForm({ handleClose }) {
             <Form.Group className="mb-3">
                 <Form.Label>Employee</Form.Label>
                 <Form.Select name="employee" value={initialValues.employee} onChange={handleChangeAppointment}>
-                    {/* {employees.map((employ, index) => {
-                        console.log(employ,'mapppppppppppp')
-                    return<option key={index}>{employ}</option>
-                })} */}
                     {
                         data.employees.map((e) => <option id={e.id}>{e.name}</option>)
                     }
